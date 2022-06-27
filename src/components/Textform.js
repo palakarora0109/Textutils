@@ -7,10 +7,25 @@ export default function Textform(props) {
     settext(event.target.value);
   };
 
-  const handleUp=()=>{
-    settext(text.toUpperCase())
-    // console.log("up")
+  const handleUp = () => {
+    settext(text.toUpperCase());
   };
+
+  const handleLo = () => {
+    settext(text.toLowerCase())
+  };
+
+  const handleSlice=()=>{
+    settext(text.slice(0,10))
+  }
+  const handleSpaces=()=>{
+    let newtext = text.split(/[ ]+/)
+    settext(newtext.join(" "))
+  }
+
+  const handleClear=()=>{
+    settext("")
+  }
 
   return (
     <div className="mx-2 my-2">
@@ -27,8 +42,24 @@ export default function Textform(props) {
       </div>
 
       <div className="container">
-        <button type="button" className="btn btn-primary" onClick={handleUp}>
+        <button type="button" className="btn btn-primary mx-3 my-2" onClick={handleUp}>
           Convert to UpperCase
+        </button>
+
+        <button type="button" className="btn btn-primary mx-3 my-2" onClick={handleLo}>
+          Convert to LowerCase
+        </button>
+
+        <button type="button" className="btn btn-primary mx-3 my-2" onClick={handleSlice}>
+          Slice upto 10 characters
+        </button>
+
+        <button type="button" className="btn btn-primary mx-3 my-2" onClick={handleSpaces}>
+          Remove ExtraSpaces
+        </button>
+
+        <button type="button" className="btn btn-primary mx-3 my-2" onClick={handleClear}>
+          Clear text
         </button>
       </div>
     </div>
