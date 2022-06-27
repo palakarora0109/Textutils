@@ -53,7 +53,7 @@ export default function Navbar(props) {
                 role="switch"
                 id="flexSwitchCheckDefault"
               />
-              <label className="form-check-label" for="flexSwitchCheckDefault">
+              <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
                 Mode
               </label>
             </div>
