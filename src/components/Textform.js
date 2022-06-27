@@ -28,7 +28,7 @@ export default function Textform(props) {
   }
 
   return (
-    <div className="mx-2 my-2">
+    <div className="mx-2 my-5">
       <h3>{props.heading}</h3>
 
       <div className="my-3">
@@ -61,6 +61,15 @@ export default function Textform(props) {
         <button type="button" className="btn btn-primary mx-3 my-2" onClick={handleClear}>
           Clear text
         </button>
+      </div>
+
+      <div className="container my-5">
+        <h3>Your Text Summary</h3>
+        <p>The above text has {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters.</p>
+        <h3>Time Requiered</h3>
+        <p>Time required to read the above text is {text.split(" ").filter((element)=>{return element.length!==0}).length * 0.008} </p>
+        <h3>Preview</h3>
+        <p>{(text.length!==0)?text:"Enter something to preview."}</p>
       </div>
     </div>
   );
